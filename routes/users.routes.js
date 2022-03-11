@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const Blog = require("../models/blogs");
 const verifyToken = require("../middleware/auth.Jwt");
-const getBlog = require("../middleware/finders");
+const { getBlog } = require("../middleware/finders");
+
 // Getting all
 router.get("/", async (req, res) => {
   try {
@@ -56,7 +56,7 @@ router.delete("/:id", [getBlog, verifyToken], async (req, res) => {
       return res.status(401).send({ message: "Unauthorized!" });
     }
     await res.blog.remove();
-    res.json({ message: "Deleted product" });
+    res.json({ message: "Deleted blog" });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

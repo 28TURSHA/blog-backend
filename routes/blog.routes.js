@@ -1,10 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const Blog = require("../models/blogs");
 const verifyToken = require("../middleware/auth.Jwt");
-const getBlog = require("../middleware/finders");
+const { getBlog } = require("../middleware/finders");
+const { getUser } = require("../middleware/finders");
+
 // Getting all
-router.get("/", async (req, res) => {
+router.get("/", verifyToken, async (req, res) => {
   try {
     const blogs = await Blog.find();
     res.json(blogs);
@@ -12,18 +13,19 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
 // Getting One
-router.get("/:id", getBlog, (req, res) => {
+router.get("/:id", [verifyToken, getBlog], (req, res) => {
   res.send(res.blog);
 });
+
 // Creating one
-router.post("/", verifyToken, async (req, res) => {
+router.post("/", [verifyToken, getUser], async (req, res) => {
   const blog = await Blog({
     name: req.body.name,
     description: req.body.description,
     created_by: req.userId,
   });
-
   try {
     const newBlog = await blog.save();
     res.status(201).json(newBlog);
@@ -31,16 +33,17 @@ router.post("/", verifyToken, async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
 // Updating One
-router.patch("/:id", [getBlog, verifyToken], async (req, res) => {
-  if (res.product.created_by != req.userId) {
+router.patch("/:id", [verifyToken, getBlog], async (req, res) => {
+  if (res.blog.created_by != req.userId) {
     return res.status(401).send({ message: "Unauthorized!" });
   }
   if (req.body.name != null) {
-    res.product.name = req.body.name;
+    res.blog.name = req.body.name;
   }
   if (req.body.description != null) {
-    res.product.description = req.body.description;
+    res.blog.description = req.body.description;
   }
   try {
     const updatedBlog = await res.blog.save();
@@ -49,14 +52,15 @@ router.patch("/:id", [getBlog, verifyToken], async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
 // Deleting One
-router.delete("/:id", [getBlog, verifyToken], async (req, res) => {
+router.delete("/:id", [verifyToken, getBlog], async (req, res) => {
+  if (res.blog.created_by != req.userId) {
+    return res.status(401).send({ message: "Unauthorized!" });
+  }
   try {
-    if (res.blog.created_by != req.userId) {
-      return res.status(401).send({ message: "Unauthorized!" });
-    }
     await res.blog.remove();
-    res.json({ message: "Deleted product" });
+    res.json({ message: "Deleted blog" });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

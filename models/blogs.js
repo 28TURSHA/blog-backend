@@ -17,6 +17,11 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  comments: {
+    type: Array,
+    required: false,
+    default: [],
+  },
 });
 
 module.exports = mongoose.model("blogs", blogSchema);

@@ -1,13 +1,35 @@
-POST   http://localhost:5000/cart/621608f39b0674a596f233b2
+POST   http://localhost:5000/blogs/621608f39b0674a596f233b2
 Content-Type: application/json
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjNzViMWYyMzljMTBjYTAwN2M2YjciLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDU2MTEzLCJleHAiOjE2NDYxNDI1MTN9.4WrmowFr7thUkfHrU7E5UoWZWdvdRc9QTcF3DU7diEw
 
 
 ###
-POST    http://localhost:5000/users/signin
+POST    http://localhost:5000/users/signup
 Content-Type: application/json
 
 {
-    "name":"tursha",
-    "password":"tursha"
+    "username":"yaaseeneds",
+    "email":"yaaseen.coms",
+    "phone_number":"123456789",
+    "password":"bryne"
+} 
+
+
+###
+POST    http://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+    "username":"kendall",
+    "email":"jenner@gmail.com",
+    "phone_number":"2155558712",
+    "password":"kendall"
+} 
+###
+POST http://localhost:5000/users/signin
+Content-Type: application/json
+
+{
+     "username":"yaaseeneds",
+      "password":"bryne"
 }

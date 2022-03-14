@@ -1,10 +1,10 @@
-POST      http://localhost:5000/blogs
+POST      http://localhost:5000/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkMmI1Y2RhNTY0NGRkNDZlMjAiLCJpYXQiOjE2NDY4MzU0NjMsImV4cCI6MTY0NjkyMTg2M30.KUhnRsBgEiKRLAVx29dn0SADZiXUJnJZVSY17_SZNJ4
 
 {
- "name":"yea",
- "description":"something"
+ "name":"Hey",
+ "description":"This is apparently a blog"
 }
 
 ###
@@ -12,5 +12,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkM
 GET   http://localhost:5000/blogs
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjNzViMWYyMzljMTBjYTAwN2M2YjciLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDU2ODg3LCJleHAiOjE2NDYxNDMyODd9.XfbLmKzKwYmEUtzIci2q1OlpPnST3L9YC1GNmTYZxf4
 ###
+
 DELETE   http://localhost:5000/blogs/6229c9c5c7e3c32fa232cc65
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkMmI1Y2RhNTY0NGRkNDZlMjAiLCJpYXQiOjE2NDY4MzU0NjMsImV4cCI6MTY0NjkyMTg2M30.KUhnRsBgEiKRLAVx29dn0SADZiXUJnJZVSY17_SZNJ4
+###
+
+
+POST http://localhost:5000/comment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkMmI1Y2RhNTY0NGRkNDZlMjAiLCJpYXQiOjE2NDY4MzU0NjMsImV4cCI6MTY0NjkyMTg2M30.KUhnRsBgEiKRLAVx29dn0SADZiXUJnJZVSY17_SZNJ4
+
+{
+    "comment": "its working"
+
+}

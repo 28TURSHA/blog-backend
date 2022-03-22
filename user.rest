@@ -4,14 +4,14 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjNzViMW
 
 
 ###
-POST    http://localhost:5000/users/signup
+POST    http://localhost:5080/users/signup
 Content-Type: application/json
 
 {
-    "username":"yaaseeneds",
-    "email":"yaaseen.coms",
+    "username":"tursha",
+    "email":"turshaarendse@gmail.com",
     "phone_number":"123456789",
-    "password":"bryne"
+    "password":"tursha"
 } 
 
 
@@ -30,6 +30,6 @@ POST http://localhost:5080/users/signin
 Content-Type: application/json
 
 {
-     "username":"yaaseeneds",
-      "password":"bryne"
+     "username":"tursha",
+      "password":"tursha"
 }

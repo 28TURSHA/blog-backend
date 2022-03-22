@@ -5,7 +5,7 @@ const { getBlog } = require("../middleware/finders");
 const { getUser } = require("../middleware/finders");
 
 // Getting all
-router.get("/", verifyToken, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const blogs = await Blog.find();
     res.json(blogs);
@@ -15,8 +15,8 @@ router.get("/", verifyToken, async (req, res) => {
 });
 
 // Getting One
-router.get("/:id", [verifyToken, getBlog], (req, res) => {
-  res.send(res.blog);
+router.get("/:id", getBlog, (req, res) => {
+  res.send(res.Blog);
 });
 
 // Creating one

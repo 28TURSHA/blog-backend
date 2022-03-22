@@ -10,8 +10,8 @@ Content-Type: application/json
 #  "phone_number": "0720599713"
 ###
 
-GET http://localhost:5080/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmMGE3MzMxYjAwOWVmZGVkYmI5MzEiLCJpYXQiOjE2NDcyNTg2NDEsImV4cCI6MTY0NzM0NTA0MX0.kYdJ_FfLwjIjHV5Dy-zcCNAxitr16IMfdiAQGJAfBWA
+GET http://localhost:5080/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5MDMzODYzZjMwMjA4ODNlODMiLCJpYXQiOjE2NDc5MzYxNjksImV4cCI6MTY0ODAyMjU2OX0.zew2nC0oUlxDt4qFktVG6PYh4SsFbTwEawPkbLrSlXc
 
 ###
 

@@ -1,16 +1,18 @@
-POST      http://localhost:5000/
+PATCH http://localhost:5080/users/62331635f21f2086649f12af
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMzMTYzNWYyMWYyMDg2NjQ5ZjEyYWYiLCJpYXQiOjE2NDc1MTU2NDcsImV4cCI6MTY0NzYwMjA0N30.du19vDojKoz9wkF_Td92qoH50SEoBvmc0oGX-3MU3bc
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkMmI1Y2RhNTY0NGRkNDZlMjAiLCJpYXQiOjE2NDY4MzU0NjMsImV4cCI6MTY0NjkyMTg2M30.KUhnRsBgEiKRLAVx29dn0SADZiXUJnJZVSY17_SZNJ4
 
 {
- "name":"Hey",
- "description":"This is apparently a blog"
+ "password": "mainbread69"
 }
 
+#  "email": "enoshelliott.ee@gmail.com",
+#  "phone_number": "0720599713"
 ###
 
-GET   http://localhost:5000/blogs
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjNzViMWYyMzljMTBjYTAwN2M2YjciLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDU2ODg3LCJleHAiOjE2NDYxNDMyODd9.XfbLmKzKwYmEUtzIci2q1OlpPnST3L9YC1GNmTYZxf4
+GET http://localhost:5080/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmMGE3MzMxYjAwOWVmZGVkYmI5MzEiLCJpYXQiOjE2NDcyNTg2NDEsImV4cCI6MTY0NzM0NTA0MX0.kYdJ_FfLwjIjHV5Dy-zcCNAxitr16IMfdiAQGJAfBWA
+
 ###
 
 DELETE   http://localhost:5000/blogs/6229c9c5c7e3c32fa232cc65
@@ -18,11 +20,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkM
 ###
 
 
-POST http://localhost:5000/comment
+POST  http://localhost:5080/622f0a7331b009efdedbb931/comments
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkMmI1Y2RhNTY0NGRkNDZlMjAiLCJpYXQiOjE2NDY4MzU0NjMsImV4cCI6MTY0NjkyMTg2M30.KUhnRsBgEiKRLAVx29dn0SADZiXUJnJZVSY17_SZNJ4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmMGE3MzMxYjAwOWVmZGVkYmI5MzEiLCJpYXQiOjE2NDcyNTg2NDEsImV4cCI6MTY0NzM0NTA0MX0.kYdJ_FfLwjIjHV5Dy-zcCNAxitr16IMfdiAQGJAfBWA
+
 
 {
-    "comment": "its working"
+    "comment":"its working"
 
 }

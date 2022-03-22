@@ -24,6 +24,8 @@ router.post("/", [verifyToken, getUser], async (req, res) => {
   const blog = await Blog({
     name: req.body.name,
     description: req.body.description,
+    content: req.body.content,
+    image: req.body.image,
     created_by: req.userId,
   });
   try {
@@ -44,6 +46,12 @@ router.patch("/:id", [verifyToken, getBlog], async (req, res) => {
   }
   if (req.body.description != null) {
     res.blog.description = req.body.description;
+  }
+  if (req.body.content != null) {
+    res.blog.content = req.body.content;
+  }
+  if (req.body.image != null) {
+    res.blog.image = req.body.description;
   }
   try {
     const updatedBlog = await res.blog.save();

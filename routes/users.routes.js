@@ -23,7 +23,8 @@ router.post(
       const salt = await bcrypt.genSalt();
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
       const user = new User({
-        name: req.body.username,
+        username: req.body.username,
+        phone_number: req.body.phone_number,
         email: req.body.email,
         password: hashedPassword,
       });
@@ -107,6 +108,9 @@ router.patch("/:id", [getUser, verifyToken], async (req, res) => {
   }
   if (req.body.password) {
     res.user.password = req.body.password;
+  }
+  if (req.body.phone_number) {
+    res.user.phone_number = req.body.phone_number;
   }
   if (req.body.createBlog) {
     res.user.createBlog = req.body.createBlog;

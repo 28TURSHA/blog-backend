@@ -61,7 +61,7 @@ router.post(
 //SIGNIN
 router.post("/signin", async (req, res) => {
   try {
-    User.findOne({ username: req.body.username }, (err, person) => {
+    User.findOne({ name: req.body.name }, (err, person) => {
       if (err) {
         res.status(500).send({ message: err });
         return;

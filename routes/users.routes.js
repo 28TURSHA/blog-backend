@@ -23,7 +23,7 @@ router.post(
       const salt = await bcrypt.genSalt();
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
       const user = new User({
-        name: req.body.name,
+        name: req.body.username,
         email: req.body.email,
         password: hashedPassword,
       });
@@ -61,7 +61,7 @@ router.post(
 //SIGNIN
 router.post("/signin", async (req, res) => {
   try {
-    User.findOne({ name: req.body.name }, (err, person) => {
+    User.findOne({ username: req.body.username }, (err, person) => {
       if (err) {
         res.status(500).send({ message: err });
         return;

@@ -1,10 +1,10 @@
-PATCH http://localhost:5080/users/62331635f21f2086649f12af
+GET  http://localhost:5080/users/6229c7afc7e3c32fa232cc61
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMzMTYzNWYyMWYyMDg2NjQ5ZjEyYWYiLCJpYXQiOjE2NDc1MTU2NDcsImV4cCI6MTY0NzYwMjA0N30.du19vDojKoz9wkF_Td92qoH50SEoBvmc0oGX-3MU3bc
 Content-Type: application/json
 
-{
- "password": "mainbread69"
-}
+# 
+#  "password": "mainbread69"
+# 
 
 #  "email": "enoshelliott.ee@gmail.com",
 #  "phone_number": "0720599713"
@@ -15,8 +15,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5M
 
 ###
 
-DELETE   http://localhost:5000/blogs/6229c9c5c7e3c32fa232cc65
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjZkMmI1Y2RhNTY0NGRkNDZlMjAiLCJpYXQiOjE2NDY4MzU0NjMsImV4cCI6MTY0NjkyMTg2M30.KUhnRsBgEiKRLAVx29dn0SADZiXUJnJZVSY17_SZNJ4
+DELETE   http://localhost:5080/blogs/6228b84126fee0e897ddfe08
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5MDMzODYzZjMwMjA4ODNlODMiLCJpYXQiOjE2NDc5MzYxNjksImV4cCI6MTY0ODAyMjU2OX0.zew2nC0oUlxDt4qFktVG6PYh4SsFbTwEawPkbLrSlXc
 ###
 
 
@@ -29,3 +29,40 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmMGE3M
     "comment":"its working"
 
 }
+###
+
+POST http://localhost:5080/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5MDMzODYzZjMwMjA4ODNlODMiLCJpYXQiOjE2NDc5Mzk3NzUsImV4cCI6MTY0ODAyNjE3NX0.ijKM4ji7wUqxGVUTuJ1YhWVVHhnBTz3FQ6GMSb_ieCs
+Content-Type: application/json
+
+    {
+    "name":"THE FIRST BLOG",
+    "description":"my first blog about the au-pair experience",
+    "image":"estryfg",
+    "content":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quos maiores distinctio corrupti nulla consequuntur tempore odit non libero facilis laboriosam inventore voluptates tempora, debitis itaque obcaecati laborum mollitia neque quis eaque magni aspernatur? Suscipit quidem corrupti repudiandae, error eaque, placeat necessitatibus aliquid distinctio modi unde quaerat voluptate, fugit quasi."
+    }
+###
+PATCH http://localhost:5080/blogs/6239a0818aacb7b77168125e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5MDMzODYzZjMwMjA4ODNlODMiLCJpYXQiOjE2NDc5Mzk3NzUsImV4cCI6MTY0ODAyNjE3NX0.ijKM4ji7wUqxGVUTuJ1YhWVVHhnBTz3FQ6GMSb_ieCs
+Content-Type: application/json
+
+    {
+    "name":"THE FIRST BLOG",
+    "description":"my first blog about the au-pair experience",
+    "image":"https://i.postimg.cc/fTzzCXL1/download.jpg",
+    "content":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quos maiores distinctio corrupti nulla consequuntur tempore odit non libero facilis laboriosam inventore voluptates tempora, debitis itaque obcaecati laborum mollitia neque quis eaque magni aspernatur? Suscipit quidem corrupti repudiandae, error eaque, placeat necessitatibus aliquid distinctio modi unde quaerat voluptate, fugit quasi."
+    }
+###
+POST http://localhost:5080/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5MDMzODYzZjMwMjA4ODNlODMiLCJpYXQiOjE2NDc5Mzk3NzUsImV4cCI6MTY0ODAyNjE3NX0.ijKM4ji7wUqxGVUTuJ1YhWVVHhnBTz3FQ6GMSb_ieCs
+Content-Type: application/json
+
+    {
+    "name":"THE SECOND BLOG",
+    "description":"my second blog about the au-pair experience",
+    "image":"https://i.postimg.cc/fTzzCXL1/download.jpg",
+    "content":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quos maiores distinctio corrupti nulla consequuntur tempore odit non libero facilis laboriosam inventore voluptates tempora, debitis itaque obcaecati laborum mollitia neque quis eaque magni aspernatur? Suscipit quidem corrupti repudiandae, error eaque, placeat necessitatibus aliquid distinctio modi unde quaerat voluptate, fugit quasi."
+    }
+###
+DELETE  http://localhost:5080/blogs/6239968ff7e05cf8efe260ee
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5MDMzODYzZjMwMjA4ODNlODMiLCJpYXQiOjE2NDc5Mzk3NzUsImV4cCI6MTY0ODAyNjE3NX0.ijKM4ji7wUqxGVUTuJ1YhWVVHhnBTz3FQ6GMSb_ieCs

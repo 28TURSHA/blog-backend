@@ -51,7 +51,7 @@ router.patch("/:id", [verifyToken, getBlog], async (req, res) => {
     res.blog.content = req.body.content;
   }
   if (req.body.image != null) {
-    res.blog.image = req.body.description;
+    res.blog.image = req.body.image;
   }
   try {
     const updatedBlog = await res.blog.save();

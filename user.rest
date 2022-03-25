@@ -48,6 +48,6 @@ POST http://localhost:5080/users/signin
 Content-Type: application/json
 
 {
-     "username":"logan",
+     "email":"logan@gmail.com",
       "password":"@logan"
 }

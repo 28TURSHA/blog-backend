@@ -58,9 +58,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjM5ODI5M
 Content-Type: application/json
 
     {
-    "name":"THE SECOND BLOG",
-    "description":"my second blog about the au-pair experience",
-    "image":"https://i.postimg.cc/fTzzCXL1/download.jpg",
+    "name":"THE FIRST BLOG",
+    "description":"my first blog about the au-pair experience",
+    "image":"estryfg",
     "content":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quos maiores distinctio corrupti nulla consequuntur tempore odit non libero facilis laboriosam inventore voluptates tempora, debitis itaque obcaecati laborum mollitia neque quis eaque magni aspernatur? Suscipit quidem corrupti repudiandae, error eaque, placeat necessitatibus aliquid distinctio modi unde quaerat voluptate, fugit quasi."
     }
 ###

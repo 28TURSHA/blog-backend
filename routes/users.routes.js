@@ -4,7 +4,7 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const verifyToken = require("../middleware/auth.Jwt");
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer')
 
 router.get("/", async (req, res) => {
   try {
@@ -15,9 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 //SIGNUP
-router.post(
-  "/signup",
-  [checkDuplicateName, checkDuplicateEmail],
+router.post("/signup", [checkDuplicateName, checkDuplicateEmail],
   async (req, res) => {
     try {
       const salt = await bcrypt.genSalt();
@@ -30,27 +28,27 @@ router.post(
       });
       const newUser = await user.save();
       const transporter = nodemailer.createTransport({
-        service: "gmail",
+        service: 'gmail',
         auth: {
-          user: "turshaarendse@gmail.com",
-          pass: "Tursha2021",
-        },
+          user: 'turshaarendse@gmail.com',
+          pass: 'Tursha2021'
+        }
       });
-
+      
       const mailOptions = {
-        from: "turshaarendse@gmail.com",
+        from: 'turshaarendse@gmail.com',
         to: req.body.email,
         subject: `Sign-up Successful`,
-        text: `thank you, ${req.body.username} your sign-up was successful`,
+        text: `thank you, ${req.body.username} your sign-up was successful`
       };
-
-      transporter.sendMail(mailOptions, function (error, info) {
+      
+      transporter.sendMail(mailOptions, function(error, info){
         if (error) {
           console.log(error);
         } else {
-          console.log("Email sent: " + info.response);
+          console.log('Email sent: ' + info.response);
         }
-      });
+      })
       res.status(201).json(newUser);
       console.log(salt);
       console.log(hashedPassword);
@@ -59,10 +57,10 @@ router.post(
     }
   }
 );
-//SIGNIN
+// SIGNIN
 router.post("/signin", async (req, res) => {
   try {
-    User.findOne({ username: req.body.username }, (err, person) => {
+    User.findOne({ email: req.body.email }, (err, person) => {
       if (err) {
         res.status(500).send({ message: err });
         return;
@@ -118,27 +116,27 @@ router.patch("/:id", [getUser, verifyToken], async (req, res) => {
   try {
     const updatedUser = await res.user.save();
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: 'gmail',
       auth: {
         user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
-      },
+        pass: process.env.PASSWORD
+      }
     });
-
+    
     const mailOptions = {
       from: process.env.EMAIL,
       to: res.user.email,
       subject: `Update Successful`,
-      text: `${res.user.username}, your profile was successfuly updated!`,
+      text: `${res.user.username}, your profile was successfuly updated!`
     };
-
-    transporter.sendMail(mailOptions, function (error, info) {
+    
+    transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         console.log(error);
       } else {
-        console.log("Email sent: " + info.response);
+        console.log('Email sent: ' + info.response);
       }
-    });
+    })
     res.json(updatedUser);
   } catch (err) {
     res.status(400).json({ message: err.message });

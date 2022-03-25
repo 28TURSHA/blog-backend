@@ -1,4 +1,4 @@
-POST   http://localhost:5000/blogs/621608f39b0674a596f233b2
+POST   http://localhost:5080/blogs/621608f39b0674a596f233b2
 Content-Type: application/json
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjFjNzViMWYyMzljMTBjYTAwN2M2YjciLCJjYXJ0IjpbXSwiaWF0IjoxNjQ2MDU2MTEzLCJleHAiOjE2NDYxNDI1MTN9.4WrmowFr7thUkfHrU7E5UoWZWdvdRc9QTcF3DU7diEw
 
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 
 ###
-POST    http://localhost:5000/users/signup
+POST    http://localhost:5080/users/signup
 Content-Type: application/json
 
 {
@@ -32,4 +32,22 @@ Content-Type: application/json
 {
      "username":"yaaseensed",
       "password":"yaaseensed"
+}
+###
+POST    http://localhost:5080/users/signup
+Content-Type: application/json
+
+{
+    "username":"logan",
+    "email":"logan@gmail.com",
+    "phone_number":"123456789",
+    "password":"@logan"
+} 
+###
+POST http://localhost:5080/users/signin
+Content-Type: application/json
+
+{
+     "username":"logan",
+      "password":"@logan"
 }
